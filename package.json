@@ -1,0 +1,28 @@
+{
+  "name": "dayone2-textbundle",
+  "version": "1.0.0",
+  "description": "DayOne2 TestBundle Utilities",
+  "main": "bin/cli.js",
+  "bin": {
+    "dayone2-textbundle": "./bin/cli.js"
+  },
+  "files": [
+    "bin/*",
+    "lib/**/*"
+  ],
+  "scripts": {
+    "test": "npx mocha",
+    "lint": "npx eslint --fix ."
+  },
+  "author": "Jens Bissinger",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^5.15.3",
+    "mocha": "^6.0.2"
+  },
+  "dependencies": {
+    "@ronomon/utimes": "^2.3.1",
+    "filenamify": "^3.0.0",
+    "jszip": "^3.2.1"
+  }
+}
