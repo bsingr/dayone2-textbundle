@@ -25,7 +25,7 @@ if (!inputPath || !outputPath) {
         const createdAt = new Date(entry.createdAt).getTime() || undefined
         const modifiedAt = new Date(entry.modifiedAt).getTime() || undefined
         const accessedAt = undefined
-        Utimes.utimes(path, createdAt, modifiedAt, accessedAt, () => {
+        Utimes.utimes(path, createdAt, createdAt, accessedAt, () => {
           resolve()
         })
       })
