@@ -80,16 +80,10 @@ describe('parseDayOne2JSONExportEntry', () => {
       assert.deepEqual(parseDayOne2JSONExportEntry({
         "text": "![](dayone-moment:\/\/2D886F84A1BF4A34B2F0396AF109F86F)\n",
         "location" : {
-          "localityName" : "Erlenbach"
-        }
-      }).title, 'Photo Erlenbach')
-
-      assert.deepEqual(parseDayOne2JSONExportEntry({
-        "text": "![ ](dayone-moment:\/\/2D886F84A1BF4A34B2F0396AF109F86F)\n",
-        "location" : {
+          "localityName" : "Erlenbach",
           "placeName" : "Seestrasse"
         }
-      }).title, 'Photo Seestrasse')
+      }).title, 'Photo Erlenbach, Seestrasse')
     })
   })
 
@@ -114,16 +108,10 @@ describe('parseDayOne2JSONExportEntry', () => {
       assert.deepEqual(parseDayOne2JSONExportEntry({
         "text": "![](dayone-moment:\/\/2D886F84A1BF4A34B2F0396AF109F86F)\n",
         "location" : {
-          "localityName" : "Erlenbach"
-        }
-      }).text, 'Photo Erlenbach\n![](attachment:2D886F84A1BF4A34B2F0396AF109F86F)\n')
-
-      assert.deepEqual(parseDayOne2JSONExportEntry({
-        "text": "![ ](dayone-moment:\/\/2D886F84A1BF4A34B2F0396AF109F86F)\n",
-        "location" : {
+          "localityName" : "Erlenbach",
           "placeName" : "Seestrasse"
         }
-      }).text, 'Photo Seestrasse\n![ ](attachment:2D886F84A1BF4A34B2F0396AF109F86F)\n')
+      }).text, 'Photo Erlenbach, Seestrasse\n![](attachment:2D886F84A1BF4A34B2F0396AF109F86F)\n')
     })
   })
 
