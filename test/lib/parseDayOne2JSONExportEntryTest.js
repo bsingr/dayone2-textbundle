@@ -60,6 +60,36 @@ describe('parseDayOne2JSONExportEntry', () => {
       assert.deepEqual(parseDayOne2JSONExportEntry({
         "text": "[ Foo Lala ](dayone-moment:\/\/2D886F84A1BF4A34B2F0396AF109F86F)\n\n Foo \nBar"
       }).title, 'Foo Lala')
+
+      assert.deepEqual(parseDayOne2JSONExportEntry({
+        "text": "[](dayone-moment:\/\/2D886F84A1BF4A34B2F0396AF109F86F)\n"
+      }).title, 'Untitled Link')
+
+      assert.deepEqual(parseDayOne2JSONExportEntry({
+        "text": "[ ](dayone-moment:\/\/2D886F84A1BF4A34B2F0396AF109F86F)\n"
+      }).title, 'Untitled Link')
+
+      assert.deepEqual(parseDayOne2JSONExportEntry({
+        "text": "![](dayone-moment:\/\/2D886F84A1BF4A34B2F0396AF109F86F)\n"
+      }).title, 'Untitled Photo')
+
+      assert.deepEqual(parseDayOne2JSONExportEntry({
+        "text": "![ ](dayone-moment:\/\/2D886F84A1BF4A34B2F0396AF109F86F)\n"
+      }).title, 'Untitled Photo')
+
+      assert.deepEqual(parseDayOne2JSONExportEntry({
+        "text": "![](dayone-moment:\/\/2D886F84A1BF4A34B2F0396AF109F86F)\n",
+        "location" : {
+          "localityName" : "Erlenbach"
+        }
+      }).title, 'Photo Erlenbach')
+
+      assert.deepEqual(parseDayOne2JSONExportEntry({
+        "text": "![ ](dayone-moment:\/\/2D886F84A1BF4A34B2F0396AF109F86F)\n",
+        "location" : {
+          "placeName" : "Seestrasse"
+        }
+      }).title, 'Photo Seestrasse')
     })
   })
 
