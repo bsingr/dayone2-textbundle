@@ -38,47 +38,47 @@ describe('parseDayOne2JSONExportEntry', () => {
       }).title, 'Foo')
 
       assert.deepEqual(parseDayOne2JSONExportEntry({
-        "text": "![](dayone-moment:\/\/2D886F84A1BF4A34B2F0396AF109F86F)\n\n# Foo \n Bar"
+        "text": "![](dayone-moment://2D886F84A1BF4A34B2F0396AF109F86F)\n\n# Foo \n Bar"
       }).title, 'Foo')
 
       assert.deepEqual(parseDayOne2JSONExportEntry({
-        "text": "![](dayone-moment:\/\/2D886F84A1BF4A34B2F0396AF109F86F)\n\n Foo \nBar"
+        "text": "![](dayone-moment://2D886F84A1BF4A34B2F0396AF109F86F)\n\n Foo \nBar"
       }).title, 'Foo')
 
       assert.deepEqual(parseDayOne2JSONExportEntry({
-        "text": "![ Foo Lala  ](dayone-moment:\/\/2D886F84A1BF4A34B2F0396AF109F86F)\n\n Foo \nBar"
+        "text": "![ Foo Lala  ](dayone-moment://2D886F84A1BF4A34B2F0396AF109F86F)\n\n Foo \nBar"
       }).title, 'Foo Lala')
 
       assert.deepEqual(parseDayOne2JSONExportEntry({
-        "text": "[](dayone-moment:\/\/2D886F84A1BF4A34B2F0396AF109F86F)\n\n# Foo \n Bar"
+        "text": "[](dayone-moment://2D886F84A1BF4A34B2F0396AF109F86F)\n\n# Foo \n Bar"
       }).title, 'Foo')
 
       assert.deepEqual(parseDayOne2JSONExportEntry({
-        "text": "[](dayone-moment:\/\/2D886F84A1BF4A34B2F0396AF109F86F)\n\n Foo \nBar"
+        "text": "[](dayone-moment://2D886F84A1BF4A34B2F0396AF109F86F)\n\n Foo \nBar"
       }).title, 'Foo')
 
       assert.deepEqual(parseDayOne2JSONExportEntry({
-        "text": "[ Foo Lala ](dayone-moment:\/\/2D886F84A1BF4A34B2F0396AF109F86F)\n\n Foo \nBar"
+        "text": "[ Foo Lala ](dayone-moment://2D886F84A1BF4A34B2F0396AF109F86F)\n\n Foo \nBar"
       }).title, 'Foo Lala')
 
       assert.deepEqual(parseDayOne2JSONExportEntry({
-        "text": "[](dayone-moment:\/\/2D886F84A1BF4A34B2F0396AF109F86F)\n"
+        "text": "[](dayone-moment://2D886F84A1BF4A34B2F0396AF109F86F)\n"
       }).title, 'Untitled Link')
 
       assert.deepEqual(parseDayOne2JSONExportEntry({
-        "text": "[ ](dayone-moment:\/\/2D886F84A1BF4A34B2F0396AF109F86F)\n"
+        "text": "[ ](dayone-moment://2D886F84A1BF4A34B2F0396AF109F86F)\n"
       }).title, 'Untitled Link')
 
       assert.deepEqual(parseDayOne2JSONExportEntry({
-        "text": "![](dayone-moment:\/\/2D886F84A1BF4A34B2F0396AF109F86F)\n"
+        "text": "![](dayone-moment://2D886F84A1BF4A34B2F0396AF109F86F)\n"
       }).title, 'Untitled Photo')
 
       assert.deepEqual(parseDayOne2JSONExportEntry({
-        "text": "![ ](dayone-moment:\/\/2D886F84A1BF4A34B2F0396AF109F86F)\n"
+        "text": "![ ](dayone-moment://2D886F84A1BF4A34B2F0396AF109F86F)\n"
       }).title, 'Untitled Photo')
 
       assert.deepEqual(parseDayOne2JSONExportEntry({
-        "text": "![](dayone-moment:\/\/2D886F84A1BF4A34B2F0396AF109F86F)\n",
+        "text": "![](dayone-moment://2D886F84A1BF4A34B2F0396AF109F86F)\n",
         "location" : {
           "localityName" : "Erlenbach",
           "placeName" : "Seestrasse"
@@ -90,23 +90,23 @@ describe('parseDayOne2JSONExportEntry', () => {
   describe('title as text', () => {
     it('returns', () => {
       assert.deepEqual(parseDayOne2JSONExportEntry({
-        "text": "[](dayone-moment:\/\/2D886F84A1BF4A34B2F0396AF109F86F)\n"
+        "text": "[](dayone-moment://2D886F84A1BF4A34B2F0396AF109F86F)\n"
       }).text, 'Untitled Link\n[](dayone-moment://2D886F84A1BF4A34B2F0396AF109F86F)\n')
 
       assert.deepEqual(parseDayOne2JSONExportEntry({
-        "text": "[ ](dayone-moment:\/\/2D886F84A1BF4A34B2F0396AF109F86F)\n"
+        "text": "[ ](dayone-moment://2D886F84A1BF4A34B2F0396AF109F86F)\n"
       }).text, 'Untitled Link\n[ ](dayone-moment://2D886F84A1BF4A34B2F0396AF109F86F)\n')
 
       assert.deepEqual(parseDayOne2JSONExportEntry({
-        "text": "![](dayone-moment:\/\/2D886F84A1BF4A34B2F0396AF109F86F)\n"
+        "text": "![](dayone-moment://2D886F84A1BF4A34B2F0396AF109F86F)\n"
       }).text, 'Untitled Photo\n![](attachment:2D886F84A1BF4A34B2F0396AF109F86F)\n')
 
       assert.deepEqual(parseDayOne2JSONExportEntry({
-        "text": "![ ](dayone-moment:\/\/2D886F84A1BF4A34B2F0396AF109F86F)\n"
+        "text": "![ ](dayone-moment://2D886F84A1BF4A34B2F0396AF109F86F)\n"
       }).text, 'Untitled Photo\n![ ](attachment:2D886F84A1BF4A34B2F0396AF109F86F)\n')
 
       assert.deepEqual(parseDayOne2JSONExportEntry({
-        "text": "![](dayone-moment:\/\/2D886F84A1BF4A34B2F0396AF109F86F)\n",
+        "text": "![](dayone-moment://2D886F84A1BF4A34B2F0396AF109F86F)\n",
         "location" : {
           "localityName" : "Erlenbach",
           "placeName" : "Seestrasse"

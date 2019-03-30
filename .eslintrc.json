@@ -14,6 +14,7 @@
         "ecmaVersion": 2018
     },
     "rules": {
+        "no-console": "off",
         "accessor-pairs": "error",
         "array-bracket-newline": "off",
         "array-bracket-spacing": [
