@@ -5,7 +5,8 @@ const parseDayOne2JSONExport = require('../../lib/parseDayOne2JSONExport')
 describe('parseDayOne2JSONExport', () => {
   describe('normal', () => {
     it('returns', () => {
-      assert.deepEqual(parseDayOne2JSONExport(__dirname + '/../assets/DayOne2JSONExport/demo.json'), {
+      const data = parseDayOne2JSONExport(__dirname + '/../assets/DayOne2JSONExport/demo.json');
+      assert.deepEqual(data, {
         "entries": [{
           "text": '# Initial entry\n\nsome text\n\n![](attachment:D3456FD591A34C098719F1A0E6C46829)',
           "title": "Initial entry",
@@ -24,6 +25,22 @@ describe('parseDayOne2JSONExport', () => {
           "modifiedAt": "2019-03-26T21:48:55Z",
           "text": "# Second entry\n\nsome text",
           "uuid": "6BD0AE9E21C447A6BC504A63899BA543"
+        }],
+        "entriesWithErrors": [{
+          "error": "Missing #text property",
+          "rawEntry": {
+            "creationDate": "2019-03-26T21:44:20Z",
+            "creationDevice": "bsingr-2018",
+            "creationDeviceModel": "MacBookPro15,1",
+            "creationDeviceType": "MacBook Pro",
+            "creationOSName": "macOS",
+            "creationOSVersion": "10.14.3",
+            "duration": 0,
+            "modifiedDate": "2019-03-26T21:48:55Z",
+            "starred": false,
+            "timeZone": "Europe/Berlin",
+            "uuid": "6BD0AE9E21C447A6BC504A63899BA544"
+          }
         }]
       })
     })
