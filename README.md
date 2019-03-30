@@ -1,5 +1,7 @@
 # DayOne2 TextBundle Conversion Utilities
 
+[![Build Status](https://travis-ci.org/bsingr/dayone2-textbundle.svg?branch=master)](https://travis-ci.org/bsingr/dayone2-textbundle)
+
 This project was created to export and import multiple [DayOne2](https://dayoneapp.com/) journals to other note-taking applications that support the [TextBundle](http://textbundle.org/) format such as [Ulysses](https://ulysses.app) and [Bear](https://bear.app/).
 
 As of 2019 a lot of note-taking applications support the [TextBundle](http://textbundle.org/) format for data exchange. TextBundle is just a thin wrapper around [Markdown](https://daringfireball.net/projects/markdown/syntax) with support for attachments (e.g. embedded images).
