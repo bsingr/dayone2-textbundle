@@ -15,6 +15,9 @@ if (!inputPath || !outputPath) {
   console.log(`${process.argv0} <dayone2-export-json-file> <target-dir>`)
 } else {
   const dayOne2JSONExport = parseDayOne2JSONExport(inputPath)
+  dayOne2JSONExport.entriesWithErrors.forEach(async entryWithError => {
+    console.log(`${entryWithError.error} ${JSON.stringify(entryWithError)}`)
+  })
   dayOne2JSONExport.entries.forEach(async entry => {
     const zip = buildTextBundleZip(entry)
     const data = await zip.generateAsync({"type": 'nodebuffer'})
