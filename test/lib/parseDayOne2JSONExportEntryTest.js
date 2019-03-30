@@ -36,6 +36,30 @@ describe('parseDayOne2JSONExportEntry', () => {
       assert.deepEqual(parseDayOne2JSONExportEntry({
         "text": "Foo"
       }).title, 'Foo')
+
+      assert.deepEqual(parseDayOne2JSONExportEntry({
+        "text": "![](dayone-moment:\/\/2D886F84A1BF4A34B2F0396AF109F86F)\n\n# Foo \n Bar"
+      }).title, 'Foo')
+
+      assert.deepEqual(parseDayOne2JSONExportEntry({
+        "text": "![](dayone-moment:\/\/2D886F84A1BF4A34B2F0396AF109F86F)\n\n Foo \nBar"
+      }).title, 'Foo')
+
+      assert.deepEqual(parseDayOne2JSONExportEntry({
+        "text": "![ Foo Lala  ](dayone-moment:\/\/2D886F84A1BF4A34B2F0396AF109F86F)\n\n Foo \nBar"
+      }).title, 'Foo Lala')
+
+      assert.deepEqual(parseDayOne2JSONExportEntry({
+        "text": "[](dayone-moment:\/\/2D886F84A1BF4A34B2F0396AF109F86F)\n\n# Foo \n Bar"
+      }).title, 'Foo')
+
+      assert.deepEqual(parseDayOne2JSONExportEntry({
+        "text": "[](dayone-moment:\/\/2D886F84A1BF4A34B2F0396AF109F86F)\n\n Foo \nBar"
+      }).title, 'Foo')
+
+      assert.deepEqual(parseDayOne2JSONExportEntry({
+        "text": "[ Foo Lala ](dayone-moment:\/\/2D886F84A1BF4A34B2F0396AF109F86F)\n\n Foo \nBar"
+      }).title, 'Foo Lala')
     })
   })
 
