@@ -26,4 +26,9 @@ if (!inputPath || !outputPath) {
         process.exit(0)
       }
     })
+    .catch(error => {
+      console.log(error)
+      console.log(`=== FAILED ===`)
+      process.exit(99)
+    })
 }
