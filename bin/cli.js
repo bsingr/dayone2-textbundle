@@ -9,6 +9,7 @@ const outputPath = process.argv[3]
 
 if (!inputPath || !outputPath) {
   console.log(`${process.argv0} <dayone2-export-json-file> <target-dir>`)
+  process.exit(1)
 } else {
   convertDayOne2JSONExportIntoTextBundleZips(inputPath, outputPath)
     .then(logs => {
@@ -19,7 +20,7 @@ if (!inputPath || !outputPath) {
       if (logs.converter.error) {
         console.log(`[CONVERTER] Failed! ${logs.converter.error}`)
         console.log('=== FAILED ===')
-        process.exit(1)
+        process.exit(2)
       } else {
         console.log(`[CONVERTER] Finished. Bundles written=${logs.converter.numberOfTextBundlesWritten}`)
         console.log('=== DONE ===')
