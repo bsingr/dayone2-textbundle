@@ -11,9 +11,7 @@ describe('convertDayOne2JSONExportIntoTextBundleZips', () => {
       const targetDir = './test/tmp/convertDayOne2JSONExportIntoTextBundleZips'
       rimraf.sync(targetDir)
       fs.mkdirSync(targetDir)
-      const logs = await convertDayOne2JSONExportIntoTextBundleZips(
-        __dirname + '/../assets/DayOne2JSONExport/demo.json', targetDir
-      )
+      const logs = await convertDayOne2JSONExportIntoTextBundleZips(__dirname + '/../assets/DayOne2JSONExport/demo.json', targetDir)
 
       // check logs
       assert.deepEqual(logs, [
@@ -28,14 +26,15 @@ describe('convertDayOne2JSONExportIntoTextBundleZips', () => {
       ])
 
       // file timestamps are correctly set
-      const statSubset = ({birthtime, mtime}) => ({birthtime, mtime})
+      const statSubset = ({birthtime, mtime}) => ({birthtime,
+mtime})
       assert.deepEqual(statSubset(fs.statSync(`${targetDir}/Initial entry.F4CF0509F3EA47D1B56F95D37F165F5E.textpack`)), {
-        birthtime: new Date('2019-03-18T13:04:56.000Z'),
-        mtime: new Date('2019-03-26T21:48:44.000Z')
+        "birthtime": new Date('2019-03-18T13:04:56.000Z'),
+        "mtime": new Date('2019-03-26T21:48:44.000Z')
       })
       assert.deepEqual(statSubset(fs.statSync(`${targetDir}/Second entry.6BD0AE9E21C447A6BC504A63899BA543.textpack`)), {
-        birthtime: new Date('2010-02-26T21:44:20.000Z'),
-        mtime: new Date('2010-03-26T21:48:55.000Z')
+        "birthtime": new Date('2010-02-26T21:44:20.000Z'),
+        "mtime": new Date('2010-03-26T21:48:55.000Z')
       })
 
       // file1 content is correct
