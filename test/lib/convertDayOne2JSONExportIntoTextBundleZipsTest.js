@@ -14,10 +14,18 @@ describe('convertDayOne2JSONExportIntoTextBundleZips', () => {
       const logs = await convertDayOne2JSONExportIntoTextBundleZips(__dirname + '/../assets/DayOne2JSONExport/demo.json', targetDir)
 
       // check logs
-      assert.deepEqual(logs, [
-        './test/tmp/convertDayOne2JSONExportIntoTextBundleZips/Initial entry.F4CF0509F3EA47D1B56F95D37F165F5E.textpack',
-        './test/tmp/convertDayOne2JSONExportIntoTextBundleZips/Second entry.6BD0AE9E21C447A6BC504A63899BA543.textpack'
-      ])
+      assert.deepEqual(logs, {
+        "converter": {
+          "numberOfTextBundlesWritten": 2
+        },
+        "parser": {
+          "entriesErrors": [
+            'Missing #text property 6BD0AE9E21C447A6BC504A63899BA544 0'
+          ],
+          "numberOfEntires": 2,
+          "numberOfEntriesWithErrors": 1
+        }
+      })
 
       // files are created with proper filenames
       assert.deepEqual(fs.readdirSync(targetDir), [
