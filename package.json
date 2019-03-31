@@ -18,7 +18,8 @@
   "license": "MIT",
   "devDependencies": {
     "eslint": "^5.15.3",
-    "mocha": "^6.0.2"
+    "mocha": "^6.0.2",
+    "rimraf": "^2.6.3"
   },
   "dependencies": {
     "@ronomon/utimes": "^2.3.1",
