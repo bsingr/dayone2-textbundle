@@ -16,13 +16,14 @@ describe('convertDayOne2JSONExportIntoTextBundleZips', () => {
       // check logs
       assert.deepEqual(logs, {
         "converter": {
-          "numberOfTextBundlesWritten": 2
+          "numberOfTextBundlesWritten": 2,
+          filesErrors: []
         },
         "parser": {
           "entriesErrors": [
             'Missing #text property 6BD0AE9E21C447A6BC504A63899BA544 0'
           ],
-          "numberOfEntires": 2,
+          "numberOfEntries": 2,
           "numberOfEntriesWithErrors": 1
         }
       })

@@ -16,7 +16,7 @@ if (!inputPath || !outputPath) {
       logs.parser.entriesErrors.forEach(e => {
         console.log(`[PARSER] Skipping entry: ${e}`)
       })
-      console.log(`[PARSER] Finished. Entries succeeded=${logs.parser.numberOfEntires} skipped=${logs.parser.numberOfEntriesWithErrors}`)
+      console.log(`[PARSER] Finished. Entries succeeded=${logs.parser.numberOfEntries} skipped=${logs.parser.numberOfEntriesWithErrors}`)
       if (logs.converter.error) {
         console.log(`[CONVERTER] Failed! ${logs.converter.error}`)
         console.log('=== FAILED ===')
