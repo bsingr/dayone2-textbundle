@@ -33,10 +33,17 @@ describe('convertDayOne2JSONExportIntoTextBundleZips', () => {
         "Second entry.6BD0AE9E21C447A6BC504A63899BA543.textpack"
       ])
 
-      // file timestamps are correctly set
-      // note: this can only be fully tested on macOS, where birthtime is fully supported
+      /*
+       * file timestamps are correctly set
+       * note: this can only be fully tested on macOS, where birthtime is fully supported
+       */
       const statSubset = ({birthtime, mtime}) => {
-        return (process.platform === 'darwin') ? {birthtime, mtime} : {mtime}
+        if (process.platform === 'darwin') {
+          return {birthtime,
+mtime}
+        } 
+          return {mtime}
+        
       }
       
       assert.deepEqual(statSubset(fs.statSync(`${targetDir}/Initial entry.F4CF0509F3EA47D1B56F95D37F165F5E.textpack`)), {
