@@ -21,22 +21,22 @@ describe('parseDayOne2JSONExport', () => {
         },
         {
           "title": "Second entry",
-          "createdAt": "2019-03-26T21:44:20Z",
-          "modifiedAt": "2019-03-26T21:48:55Z",
+          "createdAt": "2010-02-26T21:44:20Z",
+          "modifiedAt": "2010-03-26T21:48:55Z",
           "text": "# Second entry\n\nsome text",
           "uuid": "6BD0AE9E21C447A6BC504A63899BA543"
         }],
         "entriesWithErrors": [{
           "error": "Missing #text property",
           "rawEntry": {
-            "creationDate": "2019-03-26T21:44:20Z",
+            "creationDate": "2011-03-26T21:44:20Z",
             "creationDevice": "bsingr-2018",
             "creationDeviceModel": "MacBookPro15,1",
             "creationDeviceType": "MacBook Pro",
             "creationOSName": "macOS",
             "creationOSVersion": "10.14.3",
             "duration": 0,
-            "modifiedDate": "2019-03-26T21:48:55Z",
+            "modifiedDate": "2011-03-26T21:48:55Z",
             "starred": false,
             "timeZone": "Europe/Berlin",
             "uuid": "6BD0AE9E21C447A6BC504A63899BA544"

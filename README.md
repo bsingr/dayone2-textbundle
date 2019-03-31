@@ -13,6 +13,12 @@ Sadly DayOne2 does not support TextBundle out of the box, this project solves th
 - Reads [DayOne2](https://dayoneapp.com/) journal in JSON format
 - Converts into [TextBundle](http://textbundle.org/) `.textpack` ZIP files
 
+## Supported Environments
+
+Node.js 10+ and macOS (ok, because DayOne2 is macOS only ;-)).
+
+Note: Linux or Windows might work, but things like creation dates might be broken.
+
 ## Installation
 
 This project uses and was tested with [Node.js](https://nodejs.org/) v10.

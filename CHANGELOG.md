@@ -1,5 +1,11 @@
 # NEXT
 
+- ...
+
+# 1.0.3
+
+- Various bugfixes and refactorings
+
 # 1.0.2
 
 - Various bugfixes with duplicate files, titles
