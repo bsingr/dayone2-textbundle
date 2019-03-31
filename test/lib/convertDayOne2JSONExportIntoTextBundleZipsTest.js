@@ -34,8 +34,11 @@ describe('convertDayOne2JSONExportIntoTextBundleZips', () => {
       ])
 
       // file timestamps are correctly set
-      const statSubset = ({birthtime, mtime}) => ({birthtime,
-mtime})
+      // note: this can only be fully tested on macOS, where birthtime is fully supported
+      const statSubset = ({birthtime, mtime}) => {
+        return (process.platform === 'darwin') ? {birthtime, mtime} : {mtime}
+      }
+      
       assert.deepEqual(statSubset(fs.statSync(`${targetDir}/Initial entry.F4CF0509F3EA47D1B56F95D37F165F5E.textpack`)), {
         "birthtime": new Date('2019-03-18T13:04:56.000Z'),
         "mtime": new Date('2019-03-26T21:48:44.000Z')
