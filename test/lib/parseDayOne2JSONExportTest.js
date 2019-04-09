@@ -18,13 +18,18 @@ describe('parseDayOne2JSONExport', () => {
             "filename": 'cf80411fda6ba991b6110b2365fb8286.jpeg',
             "path": path.normalize(__dirname + '/../assets/DayOne2JSONExport/photos/') + 'cf80411fda6ba991b6110b2365fb8286.jpeg',
           }]
-        },
-        {
+        }, {
           "title": "Second entry",
           "createdAt": "2010-02-26T21:44:20Z",
           "modifiedAt": "2010-03-26T21:48:55Z",
           "text": "# Second entry\n\nsome text",
           "uuid": "6BD0AE9E21C447A6BC504A63899BA543"
+        }, {
+          "createdAt": "2010-02-27T21:14:20Z",
+          "modifiedAt": "2010-03-27T21:58:55Z",
+          "text": "# Third entry with double escapes\n\ndouble escape a/b dot. single escape slash/",
+          "title": "Third entry with double escapes",
+          "uuid": "6BD0AE9E21C447A6BC504A63899BC544"
         }],
         "entriesWithErrors": [{
           "error": "Missing #text property",

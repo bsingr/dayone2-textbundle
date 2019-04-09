@@ -15,6 +15,22 @@ describe('parseDayOne2JSONExportEntry', () => {
     })
   })
 
+  describe('special text escape', () => {
+    it('returns', () => {
+      assert.deepEqual(parseDayOne2JSONExportEntry({
+        "text": "\\. \\, \\\\ \\/ \\+ \\- \\( \\) \\[ \\] \\{ \\} \\> \\< \\± \\~ \\` \\# \\$ \\% \\^ \\& \\* \\_ \\= \\: \\; \\' \\\" \\? \\! \\@ \\° \\§"
+      }).text, '. , \\ / + - ( ) [ ] { } > < ± ~ ` # $ % ^ & * _ = : ; \' " ? ! @ ° §')
+
+      assert.deepEqual(parseDayOne2JSONExportEntry({
+        "text": "https:\\/\\/example.com\\/foo\\/bar"
+      }).text, 'https://example.com/foo/bar')
+
+      assert.deepEqual(parseDayOne2JSONExportEntry({
+        "text": "https:\\/\\/example\\.com\\/foo\\/bar"
+      }).text, 'https://example.com/foo/bar')
+    })
+  })
+
   describe('special title', () => {
     it('returns', () => {
       assert.deepEqual(parseDayOne2JSONExportEntry({

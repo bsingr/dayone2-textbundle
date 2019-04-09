@@ -54,6 +54,21 @@
 },
 {
   "starred" : false,
+  "text" : "# Third entry with double escapes\n\ndouble escape a\\\/b dot\\. single escape slash\/",
+  "creationDevice" : "bsingr-2018",
+  "creationOSName" : "macOS",
+  "duration" : 0,
+  "timeZone" : "Europe\/Berlin",
+  "creationDeviceModel" : "MacBookPro15,1",
+  "uuid" : "6BD0AE9E21C447A6BC504A63899BC544",
+  "modifiedDate" : "2010-03-27T21:58:55Z",
+  "creationOSVersion" : "10.14.3",
+  "creationDeviceType" : "MacBook Pro",
+  "richText" : "{\"meta\":{\"version\":1},\"contents\":[{\"text\":\"Third entry with double escapes\\n\",\"attributes\":{\"line\":{\"header\":1}}},{\"text\":\"\\n\"},{\"text\":\"double escape a\\\/b dot\\. single escape slash\/\"}]}",
+  "creationDate" : "2010-02-27T21:14:20Z"
+},
+{
+  "starred" : false,
   "creationDevice" : "bsingr-2018",
   "creationOSName" : "macOS",
   "duration" : 0,
