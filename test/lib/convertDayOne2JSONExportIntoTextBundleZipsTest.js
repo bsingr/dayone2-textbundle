@@ -16,14 +16,14 @@ describe('convertDayOne2JSONExportIntoTextBundleZips', () => {
       // check logs
       assert.deepEqual(logs, {
         "converter": {
-          "numberOfTextBundlesWritten": 2,
+          "numberOfTextBundlesWritten": 3,
           "filesErrors": []
         },
         "parser": {
           "entriesErrors": [
             'Missing #text property 6BD0AE9E21C447A6BC504A63899BA544 0'
           ],
-          "numberOfEntries": 2,
+          "numberOfEntries": 3,
           "numberOfEntriesWithErrors": 1
         }
       })
@@ -31,7 +31,8 @@ describe('convertDayOne2JSONExportIntoTextBundleZips', () => {
       // files are created with proper filenames
       assert.deepEqual(fs.readdirSync(targetDir), [
         'Initial entry.F4CF0509F3EA47D1B56F95D37F165F5E.textpack',
-        "Second entry.6BD0AE9E21C447A6BC504A63899BA543.textpack"
+        "Second entry.6BD0AE9E21C447A6BC504A63899BA543.textpack",
+        "Third entry with double escapes.6BD0AE9E21C447A6BC504A63899BC544.textpack"
       ])
 
       /*
