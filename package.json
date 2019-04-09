@@ -1,6 +1,6 @@
 {
   "name": "dayone2-textbundle",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "DayOne2 TestBundle Utilities",
   "main": "bin/cli.js",
   "bin": {

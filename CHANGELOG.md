@@ -1,6 +1,9 @@
 # NEXT
 
-- ...
+# 1.0.4
+
+- Fix double-escape of symbols like `\`, `/`, `.`, `?`, ...
+- Update dependencies
 
 # 1.0.3
 
